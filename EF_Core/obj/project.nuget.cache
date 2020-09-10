@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mxDKNOhyZvbqLpaoWxdx+TxKHafn9it2YgjhDU2fmMsOBgP423lUOosMkMXW8O9FsJDEes3Hc3C4j8ZmbNedNw==",
+  "dgSpecHash": "eTt1g/0o+jF7+5PIOL84BKsT7lPEqmaxBTQfBqeg7fBeihp4vU5cMlKQA2Ib+YrxfG3gHqWL2oAsTP+PtZ/PvQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Murilo\\Documents\\SENAI\\Projetos\\2º Semestre\\Sprint2 API\\EF_Core\\EF_Core.csproj",
+  "projectFilePath": "C:\\Users\\Murilo\\Documents\\SENAI\\Projetos\\2º Semestre\\Aula EF_Core\\EF_Core\\EF_Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Murilo\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Murilo\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

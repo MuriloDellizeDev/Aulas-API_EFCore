@@ -4,10 +4,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EF_Core.Domains
 {
-    public class PedidoItem
+    public class PedidoItem : BaseDomains
     {
-        [Key]
-        public Guid Id { get; set; }
+      
         public Guid IdPedido { get; set; }
         [ForeignKey("IdPedido")]
         public Pedido Pedido { get; set; }
@@ -20,9 +19,5 @@ namespace EF_Core.Domains
         [Required]
         public int Quantidade { get; set; }
 
-        public PedidoItem()
-        {
-            Id = Guid.NewGuid();
         }
     }
-}

@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace EF_Core.Domains
 {
-
-    //Define a classe do produto
-    public class Produto : BaseDomains
+    public class BaseDomains
     {
-     
-        public string Nome { get; set; }
-        public float Preco { get; set; }
 
+        [Key]
+        public Guid Id { get; set; }
+
+        public BaseDomains()
+        {
+            Id = Guid.NewGuid();
+        }
     }
-
 }
