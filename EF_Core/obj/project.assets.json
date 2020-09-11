@@ -5727,11 +5727,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Murilo\\Documents\\SENAI\\Projetos\\2º Semestre\\Aula EF_Core\\EF_Core\\EF_Core.csproj",
+      "projectUniqueName": "C:\\Users\\Murilo\\Documents\\SENAI\\Projetos\\2º Semestre\\Sprint2 BackEnd\\Aula EF_Core\\EF_Core\\EF_Core.csproj",
       "projectName": "EF_Core",
-      "projectPath": "C:\\Users\\Murilo\\Documents\\SENAI\\Projetos\\2º Semestre\\Aula EF_Core\\EF_Core\\EF_Core.csproj",
+      "projectPath": "C:\\Users\\Murilo\\Documents\\SENAI\\Projetos\\2º Semestre\\Sprint2 BackEnd\\Aula EF_Core\\EF_Core\\EF_Core.csproj",
       "packagesPath": "C:\\Users\\Murilo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Murilo\\Documents\\SENAI\\Projetos\\2º Semestre\\Aula EF_Core\\EF_Core\\obj\\",
+      "outputPath": "C:\\Users\\Murilo\\Documents\\SENAI\\Projetos\\2º Semestre\\Sprint2 BackEnd\\Aula EF_Core\\EF_Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Murilo\\AppData\\Roaming\\NuGet\\NuGet.Config",

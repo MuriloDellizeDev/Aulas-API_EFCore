@@ -114,8 +114,8 @@ namespace EF_Core.Repositories
 
                 //Verifica se produto existe
                 //Caso não existe gera uma exception
-                if (produtoTemp == null)
-                    throw new Exception("Produto não encontrado");
+               // if (produtoTemp == null)
+                 //   throw new Exception("Produto não encontrado");
 
                 //Caso exista altera sua propriedades
                 produtoTemp.Nome = produto.Nome;
@@ -190,9 +190,10 @@ namespace EF_Core.Repositories
             }
             catch (Exception ex)
             {
-
+                //TODO : Incluir erro no log do banco de dados
                 throw new Exception(ex.Message);
             }
+
         }
 
 
