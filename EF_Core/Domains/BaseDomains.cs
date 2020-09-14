@@ -10,7 +10,7 @@ namespace EF_Core.Domains
     {
 
         [Key]
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
         public BaseDomains()
         {

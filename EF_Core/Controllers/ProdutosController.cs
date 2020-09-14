@@ -25,7 +25,7 @@ namespace EF_Core.Controllers
             try
             {
                 //Lista os produtos 
-                var produtos =  _produtoRepository.Listar();
+                var produtos = _produtoRepository.Listar();
 
                 //Verifico se existe produto cadastrado
                 //Caso não exista eu retorno NoContent
@@ -33,13 +33,26 @@ namespace EF_Core.Controllers
                     return NoContent();
 
                 //Caso exista retorno Ok e os produtos cadastrados
-                return Ok(produtos);
+                return Ok(new { 
+
+                    totalCount = produtos.Count,
+                    data = produtos
+                
+                });
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
+
+
                 //Caso ocorra algun erro retorna BadRequest e a mensagem de erro
-                return BadRequest(ex.Message);
+                //TODO : Cadstra mensagem de erro no dominio logErro
+                return BadRequest(new
+                {
+                    statusCode = 400,
+                    error = "Ocorreu um erro no endpoint Get/produtos, envie um e-mail para email@email informando"
+
+                });
             }
         }
 
@@ -102,14 +115,11 @@ namespace EF_Core.Controllers
 
             try
             {
-                var produtoTemp = _produtoRepository.BuscarPorId(id);
-
-                if (produtoTemp == null)
-                    return NotFound();
-
-                produto.Id = id;
+               
+                //Edita o produto
                 _produtoRepository.Editar(produto);
 
+                //Retorna oK com os dados do produto
                 return Ok(produto);
             }
             catch (Exception ex)

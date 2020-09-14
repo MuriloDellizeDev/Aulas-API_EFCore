@@ -14,6 +14,10 @@ namespace EF_Core.Domains
         public string Nome { get; set; }
         public float Preco { get; set; }
 
+        //Relacionamento com a tabela pedido item 1,N
+        public List<PedidoItem> PedidosItens { get; set; }
+
+
     }
 
 }
