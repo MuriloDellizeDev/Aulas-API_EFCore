@@ -51,12 +51,12 @@ VALUES (N'20200909010436_InitialCreate', N'3.1.8');
 
 GO
 
-ALTER TABLE [PedidoItens] ADD [Quantidade] int NOT NULL DEFAULT 0;
+ALTER TABLE [Produtos] ADD [UrlImages] nvarchar(max) NULL;
 
 GO
 
 INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-VALUES (N'20200909014208_AlterTablePedidoItem', N'3.1.8');
+VALUES (N'20200920185912_AlterTableProduto', N'3.1.8');
 
 GO
 

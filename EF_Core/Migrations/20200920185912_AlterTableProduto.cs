@@ -2,22 +2,21 @@
 
 namespace EF_Core.Migrations
 {
-    public partial class AlterTablePedidoItem : Migration
+    public partial class AlterTableProduto : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<int>(
-                name: "Quantidade",
-                table: "PedidoItens",
-                nullable: false,
-                defaultValue: 0);
+            migrationBuilder.AddColumn<string>(
+                name: "UrlImages",
+                table: "Produtos",
+                nullable: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "Quantidade",
-                table: "PedidoItens");
+                name: "UrlImages",
+                table: "Produtos");
         }
     }
 }

@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Scripts\" />
+    <Compile Remove="Migrations\20200920184546_AlterTableProduto.cs" />
+    <Compile Remove="Migrations\20200920184546_AlterTableProduto.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +21,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwRoot\upload\imagens\" />
   </ItemGroup>
 
 

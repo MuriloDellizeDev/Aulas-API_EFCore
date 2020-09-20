@@ -1,9 +1,11 @@
 ﻿using EF_Core.Domains;
 using EF_Core.Interfaces;
 using EF_Core.Repositories;
+using EF_Core.Utils;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace EF_Core.Controllers
 {
@@ -87,10 +89,22 @@ namespace EF_Core.Controllers
 
         // POST api/<Produtos>
         [HttpPost]
-        public IActionResult Post(Produto produto)
+
+        //FromForm - Recebe os dados do produto via form-Data
+        public IActionResult Post([FromForm]Produto produto)
         {
             try
             {
+
+                //Verifico se foi enviado um arquivo com foto
+
+                //Verifico se foi enviado um arquivo com a imagem
+                if (produto.Imagem != null)
+                {
+                    var urlImagem = Upload.Local(produto.Imagem);
+
+                    produto.UrlImages = urlImagem;
+                }
                 //Adiciona um produto
                 _produtoRepository.Adicionar(produto);
 
