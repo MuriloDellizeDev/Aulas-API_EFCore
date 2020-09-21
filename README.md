@@ -14,7 +14,7 @@
 
    
 
-    ## JWT
+    ## JWT - Autenticação da API
 
     - [x]  Instalar pacote JWT:
 
