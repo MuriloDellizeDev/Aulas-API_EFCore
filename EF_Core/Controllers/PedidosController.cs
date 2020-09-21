@@ -21,21 +21,10 @@ namespace EF_Core.Controllers
             _pedidoRepository = new PedidoRepository();
         }
 
-        [HttpPost]
-        public IActionResult Post(List<PedidoItem> pedidosItens)
-        {
-            try
-            {
-                //Adiciona um pedido
-                Pedido pedido = _pedidoRepository.Adicionar(pedidosItens);
-                return Ok(pedido);
-            }
-            catch (System.Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
-
+        /// <summary>
+        /// Mostra todos os pedidos cadastrados
+        /// </summary>
+        /// <returns>Lista com todos os pedidos</returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -54,6 +43,11 @@ namespace EF_Core.Controllers
             }
         }
 
+        /// <summary>
+        /// Mostra um único pedido
+        /// </summary>
+        /// <param name="id">Id do pedido</param>
+        /// <returns>Um pedido especificado pelo seu id</returns>
         [HttpGet("{id}")]
         public IActionResult GetById(Guid id)
         {
@@ -72,7 +66,25 @@ namespace EF_Core.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Cadastra um novo pedido
+        /// </summary>
+        /// <param name="pedidosItens">Objeto completo de pedidos itens</param>
+        /// <returns>Pedidos cadastrado</returns>
+        [HttpPost]
+        public IActionResult Post(List<PedidoItem> pedidosItens)
+        {
+            try
+            {
+                //Adiciona um pedido
+                Pedido pedido = _pedidoRepository.Adicionar(pedidosItens);
+                return Ok(pedido);
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
 
     }
 }

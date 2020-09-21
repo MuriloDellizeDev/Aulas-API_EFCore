@@ -9,11 +9,17 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using System.Reflection;
+using System.IO;
+using Microsoft.OpenApi.Models;
 
 namespace EF_Core
 {
+
+
     public class Startup
     {
+        
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -31,6 +37,34 @@ namespace EF_Core
                 options.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
 
             });
+
+            //Adicionamos o método necessario para a criação do Swagger na aplicação
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Loja API",
+                    Description = "Modelo simples para aprendizado dobre ASP.NET Core Web API",
+                    TermsOfService = new Uri("https://example.com/terms"),
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Murilo Dellize",
+                        Email = "murilo@gmail.com",
+                        Url = new Uri("https://twitter.com/murilodellize"),
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "General",
+                        Url = new Uri("https://example.com/license"),
+                    }
+                });
+
+                //Gera os comentários em XML da documentação dos métodos
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +80,15 @@ namespace EF_Core
             app.UseAuthorization();
 
             app.UseStaticFiles();
+
+            //Usamos efetivamento o Swagger
+            app.UseSwagger();
+
+            //Definimos o endpoit e o nome da versão
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "API Loja V1");
+            });
 
             app.UseEndpoints(endpoints =>
             {

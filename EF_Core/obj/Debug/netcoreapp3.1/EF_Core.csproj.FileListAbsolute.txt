@@ -179,8 +179,15 @@ C:\Users\Murilo\Documents\SENAI\Projetos\2º Semestre\Sprint2 BackEnd\Aula EF_Co
 C:\Users\Murilo\Documents\SENAI\Projetos\2º Semestre\Sprint2 BackEnd\Aula EF_Core\EF_Core\obj\Debug\netcoreapp3.1\EF_Core.dll
 C:\Users\Murilo\Documents\SENAI\Projetos\2º Semestre\Sprint2 BackEnd\Aula EF_Core\EF_Core\obj\Debug\netcoreapp3.1\EF_Core.pdb
 C:\Users\Murilo\Documents\SENAI\Projetos\2º Semestre\Sprint2 BackEnd\Aula EF_Core\EF_Core\obj\Debug\netcoreapp3.1\EF_Core.genruntimeconfig.cache
-C:\Users\Murilo\Documents\SENAI\Projetos\2º Semestre\Sprint2 BackEnd\Aula EF_Core\EF_Core\obj\Debug\netcoreapp3.1\EF_Core.csproj.CoreCompileInputs.cache
-C:\Users\Murilo\Documents\SENAI\Projetos\2º Semestre\Sprint2 BackEnd\Aula EF_Core\EF_Core\obj\Debug\netcoreapp3.1\EF_Core.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Murilo\Documents\SENAI\Projetos\2º Semestre\Sprint2 BackEnd\Aula EF_Core\EF_Core\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\Murilo\Documents\SENAI\Projetos\2º Semestre\Sprint2 BackEnd\Aula EF_Core\EF_Core\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\Murilo\Documents\SENAI\Projetos\2º Semestre\Sprint2 BackEnd\Aula EF_Core\EF_Core\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\Murilo\Documents\SENAI\Projetos\2º Semestre\Sprint2 BackEnd\Aula EF_Core\EF_Core\obj\Debug\netcoreapp3.1\EF_Core.csproj.CoreCompileInputs.cache
+C:\Users\Murilo\Documents\SENAI\Projetos\2º Semestre\Sprint2 BackEnd\Aula EF_Core\EF_Core\obj\Debug\netcoreapp3.1\EF_Core.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Murilo\Documents\SENAI\Projetos\2º Semestre\Sprint2 BackEnd\Aula EF_Core\EF_Core\obj\Debug\netcoreapp3.1\EF_Core.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Murilo\Documents\SENAI\Projetos\2º Semestre\Sprint2 BackEnd\Aula EF_Core\EF_Core\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\Murilo\Documents\SENAI\Projetos\2º Semestre\Sprint2 BackEnd\Aula EF_Core\EF_Core\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Murilo\Documents\SENAI\Projetos\2º Semestre\Sprint2 BackEnd\Aula EF_Core\EF_Core\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Murilo\Documents\SENAI\Projetos\2º Semestre\Sprint2 BackEnd\Aula EF_Core\EF_Core\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Murilo\Documents\SENAI\Projetos\2º Semestre\Sprint2 BackEnd\Aula EF_Core\EF_Core\bin\Debug\netcoreapp3.1\EF_Core.xml
+C:\Users\Murilo\Documents\SENAI\Projetos\2º Semestre\Sprint2 BackEnd\Aula EF_Core\EF_Core\obj\Debug\netcoreapp3.1\EF_Core.xml

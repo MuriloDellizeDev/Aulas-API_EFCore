@@ -21,6 +21,11 @@ namespace EF_Core.Controllers
             _produtoRepository = new ProdutoRepository();
         }
 
+
+        /// <summary>
+        ///Mostra todos os produtos cadastrados
+        /// </summary>
+        /// <returns>Lista com todos os produtos</returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -60,6 +65,11 @@ namespace EF_Core.Controllers
 
 
         // GET api/<Produtos>/5
+        /// <summary>
+        /// Mostra um único produto
+        /// </summary>
+        /// <param name="id">Id do produto</param>
+        /// <returns>Um produto especificado pelo seu id</returns>
         [HttpGet("{id}")]
         public IActionResult Get(Guid id)
         {
@@ -87,9 +97,14 @@ namespace EF_Core.Controllers
             }
         }
 
-        // POST api/<Produtos>
-        [HttpPost]
 
+        // POST api/<Produtos>
+        /// <summary>
+        /// Cadastra um novo produto 
+        /// </summary>
+        /// <param name="produto">Objeto completo de produto</param>
+        /// <returns>Produto cadastrado</returns>
+        [HttpPost]
         //FromForm - Recebe os dados do produto via form-Data
         public IActionResult Post([FromForm]Produto produto)
         {
@@ -122,7 +137,14 @@ namespace EF_Core.Controllers
             }
         }
 
+
         // PUT api/<Produtos>/5
+        /// <summary>
+        /// Altera determinado produto
+        /// </summary>
+        /// <param name="id">Id do produto</param>
+        /// <param name="produto">Objeto produto com as alterações</param>
+        /// <returns>Indo do produto alterado</returns>
         [HttpPut("{id}")]
         public IActionResult Put(Guid id, Produto produto)
         {
@@ -145,7 +167,13 @@ namespace EF_Core.Controllers
         
         }
 
+
         // DELETE api/<Produtos>/5
+        /// <summary>
+        /// Exclui um produto
+        /// </summary>
+        /// <param name="id">Id do produto</param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {
