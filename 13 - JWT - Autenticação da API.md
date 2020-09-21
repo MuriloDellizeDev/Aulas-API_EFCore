@@ -4,7 +4,7 @@
 - [x]  Criar uma solução de API
 - [x]  Adicionar pacotes:
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/91d32076-c237-4d54-9bdf-a9021cd7bdd2/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/91d32076-c237-4d54-9bdf-a9021cd7bdd2/Untitled.png)
+    
 
 - [x]  Criar os Domains pelo EFCore - Database First
 
@@ -12,13 +12,11 @@
     Scaffold-DbContext "Data Source=.\SqlExpress; Initial Catalog= NyousTarde; User Id=sa; Password=sa132" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Domains -ContextDir Contexts -Context NyousContext
     ```
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3cd8512a-f618-4574-b114-74964d194ed4/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3cd8512a-f618-4574-b114-74964d194ed4/Untitled.png)
+   
 
     ## JWT
 
     - [x]  Instalar pacote JWT:
-
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b2526b55-b922-4ba1-bcd3-7b109715255b/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b2526b55-b922-4ba1-bcd3-7b109715255b/Untitled.png)
 
     - [x]  Adicionamos em nosso appsettings.json :
 
@@ -65,10 +63,6 @@
         ```
 
     - [x]  Criamos o Controller *Login*:
-
-        ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f3afc5de-18fe-47df-97be-5a1a97147d58/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f3afc5de-18fe-47df-97be-5a1a97147d58/Untitled.png)
-
-        ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8a4e20cd-e134-44c5-8b52-e1b58914e139/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8a4e20cd-e134-44c5-8b52-e1b58914e139/Untitled.png)
 
     - [x]  Chamamos nosso contexto lá dentro:
 
@@ -172,12 +166,9 @@
 
     - [x]  Se estiver tudo certo ele deve retornar isto no Postman:
 
-        ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/430e28cd-4d12-42f5-bea2-0a8959954aa3/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/430e28cd-4d12-42f5-bea2-0a8959954aa3/Untitled.png)
-
         - [x]  Após confirmar, vamos até [https://jwt.io/](https://jwt.io/)
         - [x]  Colamos nosso Token lá e em Payload devemos ter os seguintes dados:
-
-            ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/571a7998-5930-46bb-9a33-1ea5b172d4fd/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/571a7998-5930-46bb-9a33-1ea5b172d4fd/Untitled.png)
+   
 
     Pronto! Agora é só utilizar a anotação em cima de cada método que desejar bloquear:
 
@@ -197,9 +188,6 @@
 
     - [x]  Para testarmos, criamos o controller para "Categoria":
 
-        ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a1dba6a0-2922-4e59-a9b4-b7f5b8888d55/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a1dba6a0-2922-4e59-a9b4-b7f5b8888d55/Untitled.png)
-
-        ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e8cca272-5dfc-455f-88e2-1573b05cd009/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e8cca272-5dfc-455f-88e2-1573b05cd009/Untitled.png)
 
     ### IMPORTANTE para não gerar erros:
 
@@ -224,23 +212,14 @@
 
     - [x]  Testamos no postman:
 
-        ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dff0d5bb-661d-416d-94a9-ad6efabf9b62/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dff0d5bb-661d-416d-94a9-ad6efabf9b62/Untitled.png)
-
     - [x]  Para testar o JWT colocamos o Authotrize nos métodos que desejamos bloquear, ou na classe toda caso ela necessite do mesmo bloqueio:
-
-        ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6d69d133-99a0-4cbf-a958-eebb45eced85/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6d69d133-99a0-4cbf-a958-eebb45eced85/Untitled.png)
 
     Se rodarmos a aplicação sem nenhum token ativo, ele deve retornar erro 401 (Não autorizado):
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/db473ae2-46e4-42cc-bd82-136732e06238/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/db473ae2-46e4-42cc-bd82-136732e06238/Untitled.png)
-
     - [x]  Com a API rodando, vamos para o endpoint de login e geramos um novo Token
-
-        ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3f1158c6-91e8-49bc-b9d1-0f25f3f21c0f/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3f1158c6-91e8-49bc-b9d1-0f25f3f21c0f/Untitled.png)
 
     - [x]  Copiamos o token e colamos na aba
 
-        ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cedbd6ba-e7df-4caa-8bf1-719f97a53f19/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cedbd6ba-e7df-4caa-8bf1-719f97a53f19/Untitled.png)
 
     ### ADICIONANDO PERMISSÃO PARA TIPOS DE USUÁRIOS
 
