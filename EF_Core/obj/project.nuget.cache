@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KfV3e3k63H0io2rw0xacGajguO7LEou8f7JyKb6rqoX1gg53ONo0nt9wiMvyjDg0plRtHB32n5ZoEY5/UpdnXQ==",
+  "dgSpecHash": "VPv1y+6FspjVUP7lFp+/C3aztUCj7baIUn8RNGJV+r4YE8aaph3XIIaEzbX6NoEMcGzbopKY/Z1/Idggg+5fjg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Murilo\\Documents\\SENAI\\Projetos\\2º Semestre\\Sprint2 BackEnd\\Aula EF_Core\\EF_Core\\EF_Core.csproj",
+  "projectFilePath": "C:\\Users\\Murilo\\Documents\\SENAI\\Projetos\\2º Semestre\\Sprint2 BackEnd\\Aula EF_Core\\EF_Core\\Loja_Api_EFcore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Murilo\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.8\\microsoft.aspnetcore.jsonpatch.3.1.8.nupkg.sha512",
     "C:\\Users\\Murilo\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.8\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.8.nupkg.sha512",
