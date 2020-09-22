@@ -84,6 +84,12 @@ namespace EF_Core.Controllers
                 if (produto == null)
                     return NotFound();
 
+                Moeda dolar = new Moeda();
+
+                return Ok(new {
+                    produto,
+                    valorDolar = produto.Preco / dolar.GetDolarValue()  });
+
                 //Caso produto exista retorna
                 //Ok e os dados do produto
                 return Ok(produto);

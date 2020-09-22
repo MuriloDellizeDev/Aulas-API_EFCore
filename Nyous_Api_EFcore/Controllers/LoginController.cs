@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Nyous_Api_EFcore.Contexts;
 using Nyous_Api_EFcore.Domains;
+using Nyous_Api_EFcore.Utils;
 
 namespace Nyous_Api_EFcore.Controllers
 {
@@ -21,67 +22,84 @@ namespace Nyous_Api_EFcore.Controllers
     public class LoginController : ControllerBase
     {
 
-        // Chamamos nosso contexto do banco
+        // Chamamos nosso contexto do banco Nyous
         NyousContext _context = new NyousContext();
 
-        //Capturar as infos do token de apppsetting.json
-        // Definimos uma variável para percorrer nossos métodos com as configurações obtidas no appsettings.json
+        // Capturar as infos do token do appsetting.json
+        // Variável que irá precorrer todos os métodos com as configurações que foram obtidas
         private IConfiguration _config;
 
-        // Definimos um método construtor para poder passar essas configs
+        // Método construtor para passar as config
         public LoginController(IConfiguration config)
         {
             _config = config;
         }
 
+        // Método que vai validar o usuário da app
+
         private Usuario AuthenticateUser(Usuario login)
         {
-            return _context.Usuario.Include(a => a.IdAcessoNavigation).FirstOrDefault(u => u.Email == login.Email && u.Senha == login.Senha);
+            // Include irá fazer os JOINS na tabela
+
+            return _context.Usuario.Include(a => a.IdAcessoNavigation)
+                .FirstOrDefault(u => u.Email == login.Email && u.Senha == login.Senha);
         }
 
-        // Criamos nosso método que vai gerar nosso Token
+        //Método que irá gerar o Token
+
         private string GenerateJSONWebToken(Usuario userInfo)
         {
+            //Definimos uma security key da configuration
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+            //Cria a credencial com a security key criada usando um algotimo seguro
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             // Definimos nossas Claims (dados da sessão) para poderem ser capturadas
             // a qualquer momento enquanto o Token for ativo
             var claims = new[] {
-            new Claim(JwtRegisteredClaimNames.NameId, userInfo.Nome),
-            new Claim(JwtRegisteredClaimNames.Email, userInfo.Email),
-            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-
-            //Pegar info de acesso por escrito , ex : Padrão ou Administrador
-            new Claim(ClaimTypes.Role, userInfo.IdAcessoNavigation.Tipo)
-        };
+                new Claim(JwtRegisteredClaimNames.NameId, userInfo.Nome),
+                new Claim(JwtRegisteredClaimNames.Email, userInfo.Email),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                // Pega a info de acesso por escrito, ex: Padrão ou Administrador
+                new Claim(ClaimTypes.Role, userInfo.IdAcessoNavigation.Tipo)
+            };
 
             // Configuramos nosso Token e seu tempo de vida
             var token = new JwtSecurityToken
                 (
+                    //Issuer = Emitente = Emissor
                     _config["Jwt:Issuer"],
                     _config["Jwt:Issuer"],
                     claims,
+                    //Passa a data de expiração
                     expires: DateTime.Now.AddMinutes(120),
                     signingCredentials: credentials
                 );
 
+            // Retorna o Token efeitivamente
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
         // Usamos a anotação "AllowAnonymous" para 
         // ignorar a autenticação neste método, já que é ele quem fará isso
+        // Deixamos esse método para o acesso do user
         [AllowAnonymous]
         [HttpPost]
         public IActionResult Login([FromBody] Usuario login)
         {
-            // Definimos logo de cara como não autorizado
+            // Criptografamos antes de salvar a senha
+            // Usamos o nosso método de criptografia
+            // Definimos que irá pegar as 4 primeiras letras do e-mail para usar no Salt
+            login.Senha = Crypto.Criptografar(login.Senha, login.Email.Substring(0, 4));
+
+            // Definimos inicialmente como não autorizado.
             IActionResult response = Unauthorized();
 
             // Autenticamos o usuário da API
             var user = AuthenticateUser(login);
             if (user != null)
             {
+                // Gera o Token com as informações do usuário
                 var tokenString = GenerateJSONWebToken(user);
                 response = Ok(new { token = tokenString });
             }
