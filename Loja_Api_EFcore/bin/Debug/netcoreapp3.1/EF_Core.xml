@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EF_Core</name>
+    </assembly>
+    <members>
+        <member name="M:EF_Core.Controllers.PedidosController.Get">
+            <summary>
+            Mostra todos os pedidos cadastrados
+            </summary>
+            <returns>Lista com todos os pedidos</returns>
+        </member>
+        <member name="M:EF_Core.Controllers.PedidosController.GetById(System.Guid)">
+            <summary>
+            Mostra um único pedido
+            </summary>
+            <param name="id">Id do pedido</param>
+            <returns>Um pedido especificado pelo seu id</returns>
+        </member>
+        <member name="M:EF_Core.Controllers.PedidosController.Post(System.Collections.Generic.List{EF_Core.Domains.PedidoItem})">
+            <summary>
+            Cadastra um novo pedido
+            </summary>
+            <param name="pedidosItens">Objeto completo de pedidos itens</param>
+            <returns>Pedidos cadastrado</returns>
+        </member>
+        <member name="M:EF_Core.Controllers.ProdutosController.Get">
+             <summary>
+            Mostra todos os produtos cadastrados
+             </summary>
+             <returns>Lista com todos os produtos</returns>
+        </member>
+        <member name="M:EF_Core.Controllers.ProdutosController.Get(System.Guid)">
+            <summary>
+            Mostra um único produto
+            </summary>
+            <param name="id">Id do produto</param>
+            <returns>Um produto especificado pelo seu id</returns>
+        </member>
+        <member name="M:EF_Core.Controllers.ProdutosController.Post(EF_Core.Domains.Produto)">
+            <summary>
+            Cadastra um novo produto 
+            </summary>
+            <param name="produto">Objeto completo de produto</param>
+            <returns>Produto cadastrado</returns>
+        </member>
+        <member name="M:EF_Core.Controllers.ProdutosController.Put(System.Guid,EF_Core.Domains.Produto)">
+            <summary>
+            Altera determinado produto
+            </summary>
+            <param name="id">Id do produto</param>
+            <param name="produto">Objeto produto com as alterações</param>
+            <returns>Indo do produto alterado</returns>
+        </member>
+        <member name="M:EF_Core.Controllers.ProdutosController.Delete(System.Guid)">
+            <summary>
+            Exclui um produto
+            </summary>
+            <param name="id">Id do produto</param>
+            <returns></returns>
+        </member>
+        <member name="M:EF_Core.Interfaces.IPedidoRepository.Adicionar(System.Collections.Generic.List{EF_Core.Domains.PedidoItem})">
+            <summary>
+            Adiciona um novo pedido
+            </summary>
+            <param name="pedidosItens">Itens do pedido</param>
+            <returns>Pedido</returns>
+        </member>
+        <member name="M:EF_Core.Repositories.ProdutoRepository.Listar">
+            <summary>
+            Lista todos os produtos cadastrados
+            </summary>
+            <returns>Retorna uma Lista de Produto</returns>
+        </member>
+        <member name="M:EF_Core.Repositories.ProdutoRepository.BuscarPorId(System.Guid)">
+            <summary>
+            Busca um produto pelo seu Id
+            </summary>
+            <param name="id">Id do Produto</param>
+            <returns>Lista de produto</returns>
+        </member>
+        <member name="M:EF_Core.Repositories.ProdutoRepository.BuscarPorNome(System.String)">
+            <summary>
+            Busca produtos pelo nome
+            </summary>
+            <param name="nome">Nome do Produto</param>
+            <returns>Retorna um produto</returns>
+        </member>
+        <member name="M:EF_Core.Repositories.ProdutoRepository.Editar(EF_Core.Domains.Produto)">
+            <summary>
+            Edita um produto
+            </summary>
+            <param name="produto">Produto a ser editado</param>
+        </member>
+        <member name="M:EF_Core.Repositories.ProdutoRepository.Adicionar(EF_Core.Domains.Produto)">
+            <summary>
+            Adiciona um novo produto
+            </summary>
+            <param name="produto">Objeto do tipo Produto</param>
+        </member>
+        <member name="M:EF_Core.Repositories.ProdutoRepository.Remover(System.Guid)">
+            <summary>
+            Remove um produto
+            </summary>
+            <param name="id">Id do produto</param>
+        </member>
+    </members>
+</doc>
