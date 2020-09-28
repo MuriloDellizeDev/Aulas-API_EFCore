@@ -13,7 +13,7 @@ namespace Edux_Api_EFcore.Domains
         [Key]
         public Guid Id { get; private set; }
 
-        public BaseDomains()
+        public BaseDomains() 
         {
             Id = Guid.NewGuid();
         }

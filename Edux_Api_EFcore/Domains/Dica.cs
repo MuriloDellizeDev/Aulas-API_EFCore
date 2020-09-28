@@ -21,11 +21,12 @@ namespace Edux_Api_EFcore.Domains
         public string UrlImagem { get; set; }
 
        
-        //Foreign Keys
+        //Foreign Key
         public Guid IdUsuario { get; set; }
         [ForeignKey("IdUsuario")]
         public Usuario Usuario { get; set; }
 
+        //Dica 1-N Curtida
         public List<Curtida> Curtidas { get; set; }
     }
 }

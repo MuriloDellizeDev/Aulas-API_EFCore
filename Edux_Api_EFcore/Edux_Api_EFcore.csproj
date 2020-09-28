@@ -13,8 +13,7 @@
 
   <ItemGroup>
     <Folder Include="Scripts\" />
-    <Folder Include="Utils\" />
-    <Folder Include="WwwRoot\Upload\" />
+    <Folder Include="WwwRoot\Upload\Imagens\" />
   </ItemGroup>
 
   <ItemGroup>

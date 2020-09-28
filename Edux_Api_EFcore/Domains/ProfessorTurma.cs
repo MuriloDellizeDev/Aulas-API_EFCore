@@ -10,10 +10,10 @@ namespace Edux_Api_EFcore.Domains
 {
     public class ProfessorTurma : BaseDomains
     {
-        //Atributos
+        //Atributo
         public string Descricao { get; set; }
 
-        //Foreign Keys
+        //Foreigns Keys
         public Guid IdUsuario { get; set; }
         [ForeignKey("IdUsuario")]
         public Usuario Usuario { get; set; }

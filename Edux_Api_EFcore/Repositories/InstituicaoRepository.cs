@@ -8,22 +8,21 @@ using System.Threading.Tasks;
 
 namespace Edux_Api_EFcore.Repositories
 {
-    public class UsuarioRepository : IUsuarioRepository
+    public class InstituicaoRepository : IInstituicaoRepository
     {
         private readonly EduxContext _ctx;
 
-        public UsuarioRepository ()
+        public InstituicaoRepository ()
         {
             _ctx = new EduxContext();
         }
-
         # region Leitura
-        public List<Usuario> Mostrar()
+        public Instituicao BuscarPorId(Guid id)
         {
             try
             {
 
-                return _ctx.Usuarios.ToList();
+                return _ctx.Instituicoes.Find(id);
 
             }
             catch (Exception ex)
@@ -34,11 +33,13 @@ namespace Edux_Api_EFcore.Repositories
             }
         }
 
-        public Usuario BuscarPorId(Guid id)
+        public List<Instituicao> BuscarPorNome(string nome)
         {
             try
             {
-                return _ctx.Usuarios.Find(id);
+
+                return _ctx.Instituicoes.Where(c => c.Nome.Contains(nome)).ToList();
+
             }
             catch (Exception ex)
             {
@@ -48,11 +49,13 @@ namespace Edux_Api_EFcore.Repositories
             }
         }
 
-        public List<Usuario> BuscarPorNome (string nome)
+        public List<Instituicao> Mostrar()
         {
             try
             {
-                return _ctx.Usuarios.Where(c => c.Nome.Contains(nome)).ToList();
+
+                return _ctx.Instituicoes.ToList();
+
             }
             catch (Exception ex)
             {
@@ -61,18 +64,30 @@ namespace Edux_Api_EFcore.Repositories
 
             }
         }
-        # endregion
+        #endregion
 
         # region Gravação
-        public void Adicionar(Usuario u)
+        public void Editar(Instituicao i)
         {
             try
             {
 
-                _ctx.Usuarios.Add(u);
+                Instituicao instituicaoTemp = _ctx.Instituicoes.Find(i.Id);
+                if (instituicaoTemp == null)
+                {
+                    throw new Exception("Instituição não encontrada.");
+                }
+                instituicaoTemp.Nome = i.Nome;
+                instituicaoTemp.Logradouro = i.Logradouro;
+                instituicaoTemp.Numero = i.Numero;
+                instituicaoTemp.Complemento = i.Complemento;
+                instituicaoTemp.Bairro = i.Bairro;
+                instituicaoTemp.Cidade = i.Cidade;
+                instituicaoTemp.UF = i.UF;
+                instituicaoTemp.CEP = i.CEP;
 
+                _ctx.Instituicoes.Update(instituicaoTemp);
                 _ctx.SaveChanges();
-
             }
             catch (Exception ex)
             {
@@ -82,22 +97,15 @@ namespace Edux_Api_EFcore.Repositories
             }
         }
 
-        public void Editar(Usuario u)
+        public void Adicionar(Instituicao i)
         {
             try
             {
 
-                Usuario usuarioTemp = _ctx.Usuarios.Find(u.Id);
-                if (usuarioTemp == null)
-                {
-                    throw new Exception("Usuário não encontrado.");
-                }
-                usuarioTemp.Nome = u.Nome;
-                usuarioTemp.Email = u.Email;
-                usuarioTemp.Senha = u.Senha;
+                _ctx.Instituicoes.Add(i);
 
-                _ctx.Usuarios.Update(usuarioTemp);
                 _ctx.SaveChanges();
+
             }
             catch (Exception ex)
             {
@@ -112,13 +120,13 @@ namespace Edux_Api_EFcore.Repositories
             try
             {
 
-                Usuario usuarioTemp = BuscarPorId(id);
-                if (usuarioTemp == null)
+                Instituicao instituicaoTemp = BuscarPorId(id);
+                if (instituicaoTemp == null)
                 {
-                    throw new Exception("Usuário não encontrado.");
+                    throw new Exception("Instituição não encontrada.");
                 }
 
-                _ctx.Usuarios.Remove(usuarioTemp);
+                _ctx.Instituicoes.Remove(instituicaoTemp);
                 _ctx.SaveChanges();
             }
             catch (Exception ex)
@@ -127,7 +135,6 @@ namespace Edux_Api_EFcore.Repositories
                 throw new Exception(ex.Message);
 
             }
-
         }
         # endregion
     }
