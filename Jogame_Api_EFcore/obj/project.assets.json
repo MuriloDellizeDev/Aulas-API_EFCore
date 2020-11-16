@@ -5607,19 +5607,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\fic\\.nuget\\packages\\": {}
+    "C:\\Users\\Murilo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fic\\source\\repos\\Jogo\\Jogame\\Jogame.csproj",
+      "projectUniqueName": "C:\\Users\\Murilo\\Documents\\SENAI\\Projetos\\2º Semestre\\Sprint2 BackEnd\\Aula EF_Core\\Jogame_Api_EFcore\\Jogame.csproj",
       "projectName": "Jogame",
-      "projectPath": "C:\\Users\\fic\\source\\repos\\Jogo\\Jogame\\Jogame.csproj",
-      "packagesPath": "C:\\Users\\fic\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fic\\source\\repos\\Jogo\\Jogame\\obj\\",
+      "projectPath": "C:\\Users\\Murilo\\Documents\\SENAI\\Projetos\\2º Semestre\\Sprint2 BackEnd\\Aula EF_Core\\Jogame_Api_EFcore\\Jogame.csproj",
+      "packagesPath": "C:\\Users\\Murilo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Murilo\\Documents\\SENAI\\Projetos\\2º Semestre\\Sprint2 BackEnd\\Aula EF_Core\\Jogame_Api_EFcore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\fic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Murilo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5690,7 +5690,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
